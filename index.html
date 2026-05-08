@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usman Adesina | Data Scientist & Research Analyst</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jollof: '#E04F26', // Vibrant orange
+                        jollofDark: '#B93D1A',
+                        darkNavy: '#0F172A'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed tracking-wide scroll-smooth">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-darkNavy tracking-tight">Usman <span class="text-jollof">Adesina</span></a>
+            <nav class="space-x-6 hidden md:block">
+                <a href="#about" class="font-medium text-gray-600 hover:text-jollof transition">About</a>
+                <a href="#skills" class="font-medium text-gray-600 hover:text-jollof transition">Skills</a>
+                <a href="#projects" class="font-medium text-gray-600 hover:text-jollof transition">Projects</a>
+                <a href="#contact" class="font-medium text-gray-600 hover:text-jollof transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-24 flex flex-col-reverse md:flex-row items-center gap-12">
+        <div class="md:w-2/3 text-center md:text-left">
+            <p class="text-jollof font-bold tracking-wider uppercase text-sm mb-2">Data Scientist || Research Analyst</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-darkNavy">Hi, I'm Usman.</h1>
+            <p class="text-lg text-gray-600 mb-4">
+                I specialize in translating complex datasets into strategic business recommendations. With a dual proficiency in <strong>R</strong> and <strong>Python</strong>, I build end-to-end analytical pipelines—from rigorous statistical research and A/B testing to the deployment of predictive machine learning models.
+            </p>
+            <p class="text-lg text-gray-600 mb-8">
+                My work focuses on <strong>statistical storytelling</strong> and <strong>predictive accuracy</strong>, ensuring that data-driven insights result in measurable organizational impact.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#projects" class="bg-jollof text-white px-8 py-3 rounded-lg font-bold shadow hover:bg-jollofDark transition text-center">View My Work</a>
+                <a href="https://github.com/drjollof" target="_blank" class="bg-white text-darkNavy border border-gray-300 px-8 py-3 rounded-lg font-bold shadow-sm hover:bg-gray-50 transition text-center"><i class="fab fa-github mr-2"></i>GitHub Profile</a>
+            </div>
+        </div>
+        <div class="md:w-1/3 flex justify-center">
+            <img src="https://avatars.githubusercontent.com/drjollof" alt="Usman Adesina" class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-xl object-cover">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white py-20 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-darkNavy">Technical Expertise</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Category 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-jollof text-3xl mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-darkNavy">Languages</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Python (Pandas, Scikit-Learn, NLTK)</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> R (Tidyverse, Tidymodels, Shiny)</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> SQL</li>
+                    </ul>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-jollof text-3xl mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-darkNavy">Machine Learning</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Regression & Clustering</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Random Forests & XGBoost</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Neural Networks</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> NLP & Predictive Modeling</li>
+                    </ul>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-jollof text-3xl mb-4"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-darkNavy">Data Ops & Viz</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Power BI & Excel</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> ggplot2 & Matplotlib</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Git / GitHub</li>
+                    </ul>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="text-jollof text-3xl mb-4"><i class="fas fa-flask"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-darkNavy">Research & Stats</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> A/B Testing</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Hypothesis Testing</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Multivariate Analysis</li>
+                        <li><i class="fas fa-check text-green-500 mr-2 text-sm"></i> Experimental Design</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-50 max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-darkNavy mb-4">Featured Projects</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">A selection of my recent data science, automation, and machine learning work.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Project 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100 flex flex-col">
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-darkNavy">Financial Tools Web App</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Python</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">An interactive web application built with Streamlit that simplifies complex financial concepts into hands-on visual simulators, covering everything from basic stock valuation to credit risk and portfolio management.</p>
+                </div>
+                <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex gap-4">
+                    <a href="https://github.com/drjollof/financial-tools" target="_blank" class="text-darkNavy font-bold hover:text-jollof"><i class="fab fa-github mr-1"></i> Repository</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100 flex flex-col">
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-darkNavy">Drama Recommender</h3>
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">Machine Learning</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">An Asian Drama & Movie recommender system utilizing Cosine Similarity. It processes and recommends titles from CN, KR, JP, and HK covering releases up to mid-2025.</p>
+                </div>
+                <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex gap-4">
+                    <a href="https://github.com/drjollof/drama-recommender" target="_blank" class="text-darkNavy font-bold hover:text-jollof"><i class="fab fa-github mr-1"></i> Repository</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100 flex flex-col">
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-darkNavy">Automated Tenants Tracker</h3>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">JavaScript / Automation</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">A practical automation system engineered for property managers. It integrates Google Sheets, Google Apps Script, and Zapier to streamline tenant data tracking and notifications.</p>
+                </div>
+                <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex gap-4">
+                    <a href="https://github.com/drjollof/automated-tenants-tracker" target="_blank" class="text-darkNavy font-bold hover:text-jollof"><i class="fab fa-github mr-1"></i> Repository</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100 flex flex-col">
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-darkNavy">Language Detection NLP</h3>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Jupyter Notebook / NLP</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">A Natural Language Processing project focused on identifying and classifying languages from raw text inputs. Built utilizing scalable predictive modeling techniques.</p>
+                </div>
+                <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex gap-4">
+                    <a href="https://github.com/drjollof/language-detection-project" target="_blank" class="text-darkNavy font-bold hover:text-jollof"><i class="fab fa-github mr-1"></i> Repository</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-darkNavy text-white py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to collaborate?</h2>
+            <p class="mb-10 text-gray-400 text-lg">Whether you have a dataset that needs deciphering, a predictive model to build, or a research analysis project, I'm always open to discussing new opportunities.</p>
+            <div class="flex justify-center gap-8 text-4xl">
+                <!-- Links automatically connected to your actual profiles -->
+                <a href="https://github.com/drjollof" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/adesinausman/" target="_blank" class="text-gray-400 hover:text-[#0a66c2] transition transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Max_D_Don" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#080c17] text-gray-500 text-center py-6 text-sm">
+        <p>&copy; 2026 Usman Adesina. Built with Tailwind CSS.</p>
+    </footer>
+
+</body>
+</html>
