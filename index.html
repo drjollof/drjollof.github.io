@@ -551,7 +551,7 @@ const PROJECTS = [
     tag: "Healthcare NLP",
     tagColor: "amber",
     title: "Drug Review Sentiment Classification",
-    oneLiner: "Tests whether a domain-tuned clinical language model actually reads patient drug reviews better than classical sentiment methods — instead of assuming bigger/newer automatically wins.",
+    oneLiner: "Tests whether a domain-tuned clinical language model actually reads patient drug reviews better than classical sentiment methods.",
     bullets: [
       "Fine-tuned BioBERT on 215,000+ patient drug reviews and benchmarked it on a 180,000-review held-out set for five-class sentiment prediction.",
       "Built comparison baselines with VADER, TextBlob, and Naive Bayes to check whether transformer fine-tuning was actually earning its complexity over lexicon-based and classical methods.",
@@ -573,7 +573,7 @@ const PROJECTS = [
     tag: "Pharmacovigilance",
     tagColor: "teal",
     title: "Pharmacovigilance Signal Detection (FAERS)",
-    oneLiner: "Rebuilds the FDA's own disproportionality-based safety-signal detection from raw adverse-event reports, to check whether known black-box warnings actually reproduce from the public data.",
+    oneLiner: "Rebuilds the FDA's own disproportionality-based safety-signal detection from raw adverse-event reports, to check whether known black-box warnings on Fluoroquinolones actually reproduce from the public data.",
     bullets: [
       "Ingested ~90,000 ciprofloxacin/levofloxacin adverse-event reports from eight years of FDA FAERS data via the openFDA API into PostgreSQL.",
       "Standardized drug naming and ran PRR, ROR, and chi-square disproportionality analysis against an ~11.4 million-report background.",
@@ -595,7 +595,7 @@ const PROJECTS = [
     tag: "Production ML / MLOps",
     tagColor: "amber",
     title: "Subscription Churn Prediction & Drift Monitoring (KKBox)",
-    oneLiner: "Goes past a churn model that scores well offline to ask whether it would still be trustworthy in production once the customer base and pricing shift underneath it.",
+    oneLiner: "An end-to-end Machine Learning pipeline to predicts customer churn for the KKBox music streaming service.",
     bullets: [
       "Engineered features and trained/tuned a LightGBM churn model with Optuna on the KKBox subscription dataset, using a temporal train/test split to avoid leaking future behavior.",
       "Added SHAP interpretability and surfaced a 149 NTD vs. 99 NTD plan-price inversion between cohorts that a black-box score alone would have hidden.",
@@ -617,8 +617,8 @@ const PROJECTS = [
     featured: false,
     tag: "Applied ML",
     tagColor: "teal",
-    title: "Obesity Risk Classification",
-    oneLiner: "Interrogates a multiclass obesity model that looked almost too good — by checking whether SMOTE-generated synthetic duplicates were leaking across cross-validation folds and inflating the score.",
+    title: "Obesity Risk Classification", 
+    oneLiner: " A multiclass machine learning analysis in R using the tidymodels framework to predict individual obesity risk levels.",
     bullets: [
       "Built a Tidymodels pipeline in R comparing Random Forest, logistic regression, and decision tree classifiers on a multiclass obesity dataset.",
       "Diagnosed SMOTE-induced near-duplicate leakage across folds and re-ran validation with grouped 10-fold cross-validation based on duplicate profiles to get an honest estimate.",
@@ -640,7 +640,7 @@ const PROJECTS = [
     tag: "SQL Analytics",
     tagColor: "neutral",
     title: "Olist E-Commerce SQL Analysis",
-    oneLiner: "A SQL-only investigation (no Python anywhere) into why certain delivery routes were quietly dragging down review scores and repeat purchases on Brazil's largest e-commerce marketplace.",
+    oneLiner: "A SQL-only investigation into why certain delivery routes were quietly dragging down review scores and repeat purchases on Brazil's largest e-commerce marketplace.",
     bullets: [
       "Modeled the Olist Brazilian e-commerce schema in PostgreSQL and wrote ten queries to answer one locked business question end-to-end in SQL.",
       "Isolated the MA→SP and RJ→CE shipping routes as having a ~25% late-delivery rate, well above the marketplace average.",
