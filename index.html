@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Usman Adesina — Data Scientist</title>
-<meta name="description" content="Applied data science portfolio of Usman Adesina — experimentation, spatial statistics, NLP, recommender systems, and applied machine learning.">
+<meta name="description" content="Applied data science portfolio of Usman Adesina — healthcare NLP, pharmacovigilance, production ML/MLOps, and applied machine learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -498,7 +498,7 @@
         <p>Open to data science and analytics roles where the first question is usually "is this even true?" — happy to walk through the reasoning behind any project above.</p>
       </div>
       <div class="contact-panel">
-        <a href="mailto:drjollof@gmail.com" class="email-link">drjollof@gmail.com</a>
+        <a href="mailto:adesinausman6@gmail.com" class="email-link">adesinausman6@gmail.com</a>
         <div class="social-links">
           <a href="https://github.com/drjollof" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
             <span class="sr-only">GitHub</span>
@@ -529,7 +529,7 @@
    ============================================================ */
 const PROFILE = {
   name: "Usman Adesina",
-  email: "drjollof@gmail.com",
+  email: "adesinausman6@gmail.com",
   github: "https://github.com/drjollof",
   linkedin: "https://www.linkedin.com/in/adesinausman",
   medium: "https://medium.com/@drjollof"
@@ -548,91 +548,113 @@ const PROFILE = {
 const PROJECTS = [
   {
     featured: true,
-    tag: "Spatial Statistics",
+    tag: "Healthcare NLP",
     tagColor: "amber",
-    title: "Lagos Apartment Pricing — A Spatial Regression Approach",
-    oneLiner: "Tests whether \"buy the location, not the property\" actually holds — by modeling how much an extra bedroom is worth, neighborhood by neighborhood, instead of assuming one citywide answer.",
+    title: "Drug Review Sentiment Classification",
+    oneLiner: "Tests whether a domain-tuned clinical language model actually reads patient drug reviews better than classical sentiment methods — instead of assuming bigger/newer automatically wins.",
     bullets: [
-      "Scraped live apartment listings across Lagos (BeautifulSoup) and geocoded addresses to coordinates (Geopy).",
-      "Cleaned the data down to standard 1–5 bedroom residential sales and engineered features to address multicollinearity between bedrooms, bathrooms, and toilets.",
-      "Fit a Geographically Weighted Regression model (mgwr) against a global OLS baseline to compare a single citywide relationship with one that varies by location.",
-      "Published an interactive map of the results (Folium, GitHub Pages) so the coefficient variation is explorable, not just reported."
+      "Fine-tuned BioBERT on 215,000+ patient drug reviews and benchmarked it on a 180,000-review held-out set for five-class sentiment prediction.",
+      "Built comparison baselines with VADER, TextBlob, and Naive Bayes to check whether transformer fine-tuning was actually earning its complexity over lexicon-based and classical methods.",
+      "Handled medical-terminology-heavy, misspelling-prone review text where general-purpose sentiment models typically misfire.",
+      "Reported accuracy and weighted F1 against every baseline rather than a single headline number, to make the model comparison honest."
     ],
     metrics: [
-      { label: "Adj. R² — OLS vs GWR", value: "0.278 → 0.723" },
-      { label: "AICc reduction", value: "≈ 11,800 pts" },
-      { label: "Bedroom premium range", value: "−0.3% to +269%" }
+      { label: "Accuracy", value: "62.2%" },
+      { label: "Weighted F1", value: "0.66" },
+      { label: "Reviews (fine-tune / held-out)", value: "128K+ / 93K" }
     ],
-    tools: ["Python", "BeautifulSoup", "Geopy", "mgwr", "GeoPandas", "Folium", "Pandas"],
+    tools: ["Python", "BioBERT", "PyTorch", "Transformers", "VADER", "TextBlob", "Scikit-learn"],
     links: [
-      { label: "Repo", url: "https://github.com/drjollof/lagos-apartment-pricing" },
-      { label: "Interactive Map", url: "https://drjollof.github.io/lagos-apartment-pricing/" },
-      { label: "Writeup", url: "https://medium.com/@drjollof/what-geographically-weighted-regression-taught-me-about-lagos-real-estate-032a1d8c52ef" }
+      { label: "Repo", url: "https://github.com/drjollof/drug-review-sentiment" }
     ]
   },
   {
     featured: false,
-    tag: "Experimentation",
+    tag: "Pharmacovigilance",
     tagColor: "teal",
-    title: "Website Theme A/B Test Analysis",
-    oneLiner: "An R-based experiment analysis comparing light and dark website themes across purchase behavior, cart additions, engagement depth, and session duration.",
+    title: "Pharmacovigilance Signal Detection (FAERS)",
+    oneLiner: "Rebuilds the FDA's own disproportionality-based safety-signal detection from raw adverse-event reports, to check whether known black-box warnings actually reproduce from the public data.",
     bullets: [
-      "Cleaned and profiled user-level experiment data, then compared treatment groups across conversion, click-through, bounce, scroll depth, and session duration metrics.",
-      "Used two-sample proportion tests for binary outcomes such as purchases and add-to-cart behavior.",
-      "Checked distributional assumptions before using non-parametric Wilcoxon tests for continuous engagement metrics."
+      "Ingested ~90,000 ciprofloxacin/levofloxacin adverse-event reports from eight years of FDA FAERS data via the openFDA API into PostgreSQL.",
+      "Standardized drug naming and ran PRR, ROR, and chi-square disproportionality analysis against an ~11.4 million-report background.",
+      "Reproduced known FDA black-box signals — tendon rupture and aortic aneurysm/dissection — as a sanity check before trusting any exploratory signal.",
+      "Built a Power BI dashboard so signal strength and case counts are explorable by drug and event rather than buried in a query result."
     ],
     metrics: [
-      { label: "Methods", value: "Prop tests + Wilcoxon" },
-      { label: "Deliverable", value: "R Notebook" }
+      { label: "Tendon rupture PRR", value: "≈26.4 – 119.4" },
+      { label: "Aortic aneurysm PRR", value: "≈5.4" },
+      { label: "Background reports", value: "≈11.4M" }
     ],
-    tools: ["R", "Tidyverse", "skimr", "ggplot2", "Hypothesis Testing"],
+    tools: ["Python", "PostgreSQL", "openFDA API", "SQL", "Power BI"],
     links: [
-      { label: "Repo", url: "https://github.com/drjollof/ab-test-analysis" },
-      { label: "Notebook", url: "https://github.com/drjollof/ab-test-analysis/blob/main/website_themes_ab.Rmd" }
+      { label: "Repo", url: "https://github.com/drjollof/faers-fluoroquinolones-analysis" }
     ]
   },
   {
     featured: false,
-    tag: "NLP / Classification",
+    tag: "Production ML / MLOps",
     tagColor: "amber",
-    title: "Language Detection Model",
-    oneLiner: "A text classifier that identifies which of 22 languages a sentence is written in, comparing four classical model families rather than defaulting to one.",
+    title: "Subscription Churn Prediction & Drift Monitoring (KKBox)",
+    oneLiner: "Goes past a churn model that scores well offline to ask whether it would still be trustworthy in production once the customer base and pricing shift underneath it.",
     bullets: [
-      "Trained on 22,000 labeled sentences (1,000 per language) using CountVectorizer features.",
-      "Compared Multinomial Naive Bayes, Random Forest, SVC, and Logistic Regression on accuracy, precision, recall, and F1.",
-      "Deployed the strongest model as a Streamlit app for live text input."
+      "Engineered features and trained/tuned a LightGBM churn model with Optuna on the KKBox subscription dataset, using a temporal train/test split to avoid leaking future behavior.",
+      "Added SHAP interpretability and surfaced a 149 NTD vs. 99 NTD plan-price inversion between cohorts that a black-box score alone would have hidden.",
+      "Exposed predictions through a FastAPI endpoint, containerized with Docker, and deployed to Google Cloud Run.",
+      "Implemented PSI and KS-based drift monitoring with a Streamlit dashboard for real-time inference and drift visualization."
     ],
     metrics: [
-      { label: "Languages", value: "22" },
-      { label: "Best model (test)", value: "≈94% acc." }
+      { label: "Model", value: "LightGBM + Optuna" },
+      { label: "Drift monitoring", value: "PSI / KS" },
+      { label: "Deployment", value: "FastAPI · Docker · Cloud Run" }
     ],
-    tools: ["Python", "Pandas", "Scikit-learn", "Streamlit"],
+    tools: ["Python", "LightGBM", "Optuna", "SHAP", "FastAPI", "Docker", "Google Cloud Run", "Streamlit"],
     links: [
-      { label: "Repo", url: "https://github.com/drjollof/language-detection-project" },
-      { label: "Live App", url: "https://trad-lang-detect.streamlit.app/" },
-      { label: "Writeup", url: "https://medium.com/@drjollof/how-i-trained-a-language-detection-model-using-machine-learning-349bfdf4bcde" }
+      { label: "Repo", url: "https://github.com/drjollof/kkbox-churn-prediction" },
+      { label: "Live App", url: "https://kkbox-drift-monitor.streamlit.app/" }
     ]
   },
   {
     featured: false,
-    tag: "Recommender Systems",
+    tag: "Applied ML",
     tagColor: "teal",
-    title: "Asian Drama & Movie Recommender",
-    oneLiner: "A content-based search and discovery engine for Chinese, Korean, Japanese, and Hong Kong film and television.",
+    title: "Obesity Risk Classification",
+    oneLiner: "Interrogates a multiclass obesity model that looked almost too good — by checking whether SMOTE-generated synthetic duplicates were leaking across cross-validation folds and inflating the score.",
     bullets: [
-      "Vectorized genre, cast, and plot tags (TF-IDF) and ranked similarity with cosine distance — chosen deliberately over collaborative filtering since the dataset has no user history to learn from.",
-      "Built country-of-origin filtering so recommendations can be scoped to a specific region.",
-      "Shipped as two live Flask apps (dramas and movies) on Render."
+      "Built a Tidymodels pipeline in R comparing Random Forest, logistic regression, and decision tree classifiers on a multiclass obesity dataset.",
+      "Diagnosed SMOTE-induced near-duplicate leakage across folds and re-ran validation with grouped 10-fold cross-validation based on duplicate profiles to get an honest estimate.",
+      "Evaluated ROC AUC, accuracy, macro-F1, Cohen's kappa, and log loss rather than a single metric.",
+      "Ran feature-importance and partial-dependence analysis to check the model's reasoning matched clinical intuition, not just its score."
     ],
     metrics: [
-      { label: "Regional coverage", value: "CN · KR · JP · HK" },
-      { label: "Deployed apps", value: "2" }
+      { label: "ROC AUC (Random Forest)", value: "0.959" },
+      { label: "Accuracy", value: "84.4%" },
+      { label: "Validation", value: "Grouped 10-fold CV" }
     ],
-    tools: ["Python", "Flask", "Pandas", "Scikit-learn (TF-IDF, cosine similarity)"],
+    tools: ["R", "Tidymodels", "Random Forest", "SMOTE", "ggplot2"],
     links: [
-      { label: "Repo", url: "https://github.com/drjollof/drama-recommender" },
-      { label: "Drama App", url: "https://drama-rec.onrender.com/" },
-      { label: "Movie App", url: "https://movie-rec-cmns.onrender.com/" }
+      { label: "Repo", url: "https://github.com/drjollof/Obesity-Prediction-Tidymodel" }
+    ]
+  },
+  {
+    featured: false,
+    tag: "SQL Analytics",
+    tagColor: "neutral",
+    title: "Olist E-Commerce SQL Analysis",
+    oneLiner: "A SQL-only investigation (no Python anywhere) into why certain delivery routes were quietly dragging down review scores and repeat purchases on Brazil's largest e-commerce marketplace.",
+    bullets: [
+      "Modeled the Olist Brazilian e-commerce schema in PostgreSQL and wrote ten queries to answer one locked business question end-to-end in SQL.",
+      "Isolated the MA→SP and RJ→CE shipping routes as having a ~25% late-delivery rate, well above the marketplace average.",
+      "Connected late delivery on those routes to review scores dropping to ~3.6 and repeat purchase rate falling by ~19%.",
+      "Documented the schema with an ERD and wrote up findings and methodology in the repo README and /docs."
+    ],
+    metrics: [
+      { label: "Late delivery (worst routes)", value: "≈25%" },
+      { label: "Review score impact", value: "→ ≈3.6" },
+      { label: "Repeat purchase impact", value: "≈−19%" }
+    ],
+    tools: ["SQL", "PostgreSQL", "ERD Modeling"],
+    links: [
+      { label: "Repo", url: "https://github.com/drjollof/olist-sql-analysis" }
     ]
   }
 ];
@@ -651,12 +673,12 @@ const ARTICLES = [
    want the ticker to differ from the project metrics.
    ============================================================ */
 const TICKER_ITEMS = [
-  "ADJ. R² 0.278 → 0.723 ON LAGOS PRICING MODEL",
-  "A/B TEST ANALYSIS IN R",
-  "22 LANGUAGES CLASSIFIED",
-  "BEDROOM PREMIUM: −0.3% TO +269% BY NEIGHBORHOOD",
-  "4 MODEL FAMILIES COMPARED, HEAD TO HEAD",
-  "2 LIVE RECOMMENDER APPS DEPLOYED"
+  "BIOBERT FINE-TUNED ON 215K+ DRUG REVIEWS",
+  "FAERS SIGNALS REPRODUCED: TENDON RUPTURE PRR ≈25–101",
+  "KKBOX CHURN MODEL LIVE ON CLOUD RUN",
+  "OBESITY MODEL: 0.959 ROC AUC, GROUPED CV",
+  "OLIST: LATE ROUTES CUT REPEAT PURCHASES ≈19%",
+  "10 SQL QUERIES, ZERO PYTHON"
 ];
 
 /* ============================================================
